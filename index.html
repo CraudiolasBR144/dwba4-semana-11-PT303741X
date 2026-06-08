@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>IFSP - Página Inicial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="menu">
+    <a href="index.html">HOME</a>
+    <a href="pages/eventos.html">EVENTOS</a>
+    <a href="pages/contato.html">CONTATO</a>
+
+    <div class="dropdown">
+      <a href="pages/cursos.html" class="dropbtn">CURSOS</a>
+      <div class="dropdown-content">
+        <a href="pages/cursos.html">Análise e Desenvolvimento de Sistemas</a>
+        <a href="pages/cursos.html">Engenharia de Produção</a>
+      </div>
+    </div>
+
+    <a href="pages/entrar.html">ENTRAR</a>
+    <a href="pages/sobre.html" class="sobre">SOBRE</a>
+  </nav>
+
+  <div class="banner">
+    <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/ifsp.png?raw=true" alt="Logo IFSP">
+  </div>
+</header>
+
+<main>
+
+  <section class="slider">
+    <button class="prev">&#10094;</button>
+
+    <div class="slides">
+      <img class="slide active" src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/SEJA_RARO.jpg?raw=true" alt="Anote aí">
+      <img class="slide" src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true" alt="Eleições">
+      <img class="slide" src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" alt="SNCT">
+    </div>
+
+    <button class="next">&#10095;</button>
+  </section>
+
+  <section class="noticias">
+    <div class="grid-noticias">
+
+      <div class="noticia">
+        <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true" alt="Eleições IFSP">
+        <h3>Radar IFSP: informe-se sobre as eleições do dia 13 de outubro</h3>
+        <p>Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu Câmpus</p>
+      </div>
+
+      <div class="noticia">
+        <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" alt="SNCT">
+        <h3>IFSP: SNCT reúne atividades entre 19 e 24 de outubro</h3>
+        <p>Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais</p>
+      </div>
+
+      <div class="noticia">
+        <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/SEJA_RARO.jpg?raw=true" alt="Palestra">
+      </div>
+
+      <div class="noticia">
+        <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/maratona.jpeg?raw=true" alt="INTERIFSP">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="video">
+    <h2>Conheça os desafios de inovação</h2>
+
+    <iframe 
+      src="https://www.youtube.com/embed/1egUfDkqkaA"
+      title="Desafio de Inovação"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+</main>
+
+<footer>
+  <div class="social">
+    <a href="#">
+      <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/facebook.png?raw=true" alt="Facebook">
+    </a>
+  </div>
+
+  <p>
+    IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias -
+    CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100
+  </p>
+</footer>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+
+  function mostrarSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    if (index >= slides.length) {
+      slideIndex = 0;
+    }
+
+    if (index < 0) {
+      slideIndex = slides.length - 1;
+    }
+
+    slides[slideIndex].classList.add("active");
+  }
+
+  next.addEventListener("click", () => {
+    slideIndex++;
+    mostrarSlide(slideIndex);
+  });
+
+  prev.addEventListener("click", () => {
+    slideIndex--;
+    mostrarSlide(slideIndex);
+  });
+
+  setInterval(() => {
+    slideIndex++;
+    mostrarSlide(slideIndex);
+  }, 3000);
+</script>
+
+</body>
+</html>
